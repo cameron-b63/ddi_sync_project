@@ -24,7 +24,7 @@ module tb_single_ddi_fsm;
         .current_state(current_state)
     );
 
-    // Clock generation: 10ns period (100MHz)
+    // Clock generation
     always #5 clk = ~clk;
 
     // Testbench procedure
