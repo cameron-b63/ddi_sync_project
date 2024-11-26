@@ -6,9 +6,9 @@ This document tracks the steps and milestones for designing, programming, and te
 
 ## Phase 1: Initial Setup
 - [X] Set up project directory structure.
-- [ ] Write `ddi_fsm.v` for a single DDI light configuration.
-- [ ] Create `ddi_fsm_tb.v` to test the FSM behavior.
-- [ ] Simulate the FSM and verify correct transitions using waveform tools (e.g., GTKWave).
+- [X] Write `ddi_fsm.v` for a single DDI light configuration.
+- [X] Create `ddi_fsm_tb.v` to test the FSM behavior.
+- [X] Simulate the FSM and verify correct transitions using waveform tools (e.g., GTKWave).
 - [ ] Document FSM states and transitions in `docs/fsm_states.md`.
 
 ---
