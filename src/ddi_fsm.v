@@ -45,8 +45,8 @@ module single_ddi_fsm (
 		case(current_state)
 			ALL_RED: begin
 				case(phase)
-					PHASE_1: next_state = (timing_done) ? PHASE_2_GREEN : ALL_RED;
-					PHASE_2: next_state = (timing_done) ? PHASE_1_GREEN : ALL_RED;
+					PHASE_1: next_state = (timing_done) ? PHASE_1_GREEN : ALL_RED;
+					PHASE_2: next_state = (timing_done) ? PHASE_2_GREEN : ALL_RED;
 					PRIORITY: begin
 						case(sync)
 							EAST_PRIORITY: next_state = (timing_done) ? EASTBOUND_GREEN : ALL_RED;
