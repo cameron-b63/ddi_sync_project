@@ -1,5 +1,10 @@
 # DDI (Diverging Diamond Interchange) Synchronization
-Icarus verilog model for synchronizing a diverging diamond interchange with other traffic light configurations.
+Verilog model for a diverging diamond interchange; includes control of 'priority' allowing for better traffic management during peak times.
 
 ## Usage
-`$ make` will run all testbenches, and save output to sim/
+`$ make` will run testbenches, and save compiled executables to sim/target/.
+
+## Dependencies
+This project was developed using Icarus verilog. It can be installed on Debian/Ubuntu with
+`apt install iverilog`
+

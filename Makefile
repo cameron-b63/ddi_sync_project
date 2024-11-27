@@ -1,7 +1,7 @@
 SIM = iverilog
 VVP = vvp
-SRC = src/timing_controller.v# src/sync_ctrl.v
-TB = tb/timing_controller_tb.v
+SRC = src/top.v src/phase_controller.v src/timing_controller.v src/ddi_fsm.v
+TB = tb/top_tb.v
 OUT = sim/compiled.out
 
 all: simulate
