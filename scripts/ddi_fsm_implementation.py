@@ -21,8 +21,8 @@ fsm.node('Maintenance', '1001', shape='doublecircle', style='dashed')
 
 # Meta-group for readability
 fsm.node('meta', '', shape='point', width='0', height='0')
-fsm.edge('meta', 'Maintenance', label='maintenance == 1', style='dashed')
-fsm.edge('Maintenance', 'ALL_RED', label='maintenance == 0')
+fsm.edge('meta', 'Maintenance', label='panic || maintenance', style='dashed')
+fsm.edge('Maintenance', 'ALL_RED', label='!panic && !maintenance')
 
 # Define transitions
 fsm.edge('ALL_RED', 'PHASE_1_GREEN', 'timing == 1 && phase == 00')
