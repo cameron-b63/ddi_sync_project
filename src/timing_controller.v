@@ -13,19 +13,19 @@ module timing_controller (
 	// Determine threshold based on FSM state
 	always @(*) begin
         	case (current_state)
-			// Grin
+			// Green
             		`PHASE_1_GREEN: timing_threshold = `GREEN_TICKS;
             		`PHASE_2_GREEN: timing_threshold = `GREEN_TICKS;
 			`EASTBOUND_GREEN: timing_threshold = `GREEN_TICKS;
 			`WESTBOUND_GREEN: timing_threshold = `GREEN_TICKS;
-			// Yeller
+			// Yellow
             		`PHASE_1_YELLOW: timing_threshold = `YELLOW_TICKS;
             		`PHASE_2_YELLOW: timing_threshold = `YELLOW_TICKS;
 			`EASTBOUND_YELLOW: timing_threshold = `YELLOW_TICKS;
 			`WESTBOUND_YELLOW: timing_threshold = `YELLOW_TICKS;
-            		// Marlboro reds
+            		// Red
 			`ALL_RED: timing_threshold = `RED_TICKS;
-            		// Maintenance no give shit
+            		// Maintenance
 			default: timing_threshold = 0;
         	endcase
     	end

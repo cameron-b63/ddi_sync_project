@@ -30,7 +30,7 @@ module top(
 	);
 
 	// Instantiate DDI FSM
-	single_ddi_fsm u_single_ddi_fsm (
+	light_controller u_light_controller (
 		.clk(clk),
 		.rst(rst),
 		.phase(current_phase),

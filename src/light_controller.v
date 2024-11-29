@@ -1,6 +1,7 @@
 `include "src/fsm_parameters.v" 
 
-module single_ddi_fsm (	
+// Module definition for light controller
+module light_controller (	
 	input wire clk,			// Clock signal
 	input wire rst,			// Reset signal
 	input wire timing_done,		// Timing controller input
@@ -9,6 +10,7 @@ module single_ddi_fsm (
 	output reg [3:0] current_state	// Output state
 );
 	
+	// Track next state; for pre-loading
 	reg [3:0] next_state;
 
 	// Clock/reset signal logic

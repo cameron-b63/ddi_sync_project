@@ -5,10 +5,10 @@ module top_tb;
 
     	reg clk;
     	reg rst;
-    	reg [1:0] priority;       // Priority input: 00 = No priority, 01 = East, 10 = West (i used one-hot like a THUG)
-    	wire [3:0] light_state;   // Traffic light outputs (I did not use one-hot because too complex :( )
+    	reg [1:0] priority;       // Priority input: 00 = No priority, 01 = East, 10 = West (One-hot)
+    	wire [3:0] light_state;   // Traffic light outputs (Not one-hot due to large number of states)
 
-	// Instantiate top (do-as-you-must demon)
+	// Instantiate top (prefix sub-modules with 'u' if you need access)
     	top uut (
         	.clk(clk),
         	.rst(rst),
@@ -16,11 +16,10 @@ module top_tb;
         	.light_state(light_state)
     	);
 
-    	// Clock generation: 1ns period because although real world is seconds for traffic lights nobody has time for that
-    	initial clk = 0;
+    	// Clock generation: 1ns (Real world 1s)
+	initial clk = 0;
     	always #0.5 clk = ~clk;
 
-    	// Super cool testing
     	initial begin
 		// Reset for no-priority
 		$display("[+] Resetting for initial test.");

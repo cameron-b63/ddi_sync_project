@@ -21,19 +21,16 @@ module phase_controller(
 			current_phase <= next_phase;
 	end
 
-	// actual assignment logic for the phases - depends on yellow light
-	// stuff
+	// actual assignment logic for the phases - depends on light state
 	always @(*) begin
 		case (light_state)
 			`PHASE_1_YELLOW: next_phase <= `PHASE_2;
 			`PHASE_2_YELLOW: begin
-				// At the end of phase 2, some choices need to
-				// be made.
+				// At the end of phase 2, state can go in several directions.
 				case (priority)
-					`NONE: next_phase <= `PHASE_1;
 					`EAST: next_phase <= `EAST_PRIORITY;
 					`WEST: next_phase <= `WEST_PRIORITY;
-					default: next_phase <= `PHASE_1;	// If simulataneous priority is requested, nobody gets it.
+					default: next_phase <= `PHASE_1;	// If simulataneous priority is somehow requested, nobody gets it.
 				endcase
 			end
 			`EASTBOUND_YELLOW: next_phase <= `PHASE_1;
