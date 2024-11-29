@@ -39,5 +39,5 @@ fsm.edge('WESTBOUND_GREEN', 'WESTBOUND_YELLOW', 'timing == 1')
 fsm.edge('WESTBOUND_YELLOW', 'ALL_RED', 'timing == 1')
 
 # Render and display the FSM diagram
-fsm.render('../../docs/diagrams/ddi_fsm_implementation')
+fsm.render('../docs/diagrams/ddi_fsm_implementation')
 fsm.view()

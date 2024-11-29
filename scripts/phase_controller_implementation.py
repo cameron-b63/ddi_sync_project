@@ -16,5 +16,5 @@ fsm.edge('PHASE_2', 'PRIORITY_WEST', 'light_state == 0100 && priority == 10')
 fsm.edge('PRIORITY_EAST', 'PHASE_1', 'light_state == 0110')
 fsm.edge('PRIORITY_WEST', 'PHASE_1', 'light_state == 1000')
 
-fsm.render('../../docs/diagrams/phase_controller_implementation')
+fsm.render('../docs/diagrams/phase_controller_implementation')
 fsm.view()

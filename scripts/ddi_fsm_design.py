@@ -43,5 +43,5 @@ fsm.edge('WESTBOUND_GREEN', 'WESTBOUND_YELLOW', 'Green timing satisfied')
 fsm.edge('WESTBOUND_YELLOW', 'ALL_RED', 'Yellow timing satisfied')
 
 # Render and display the FSM diagram
-fsm.render('../../docs/diagrams/ddi_fsm_design')
+fsm.render('../docs/diagrams/ddi_fsm_design')
 fsm.view()

@@ -11,5 +11,5 @@ fsm.edge('COUNTING_NOT_DONE', 'COUNTING_DONE', 'Counter reached appropriate limi
 fsm.edge('COUNTING_DONE', 'COUNTING_NOT_DONE', 'Counter not yet reached limit')
 fsm.edge('COUNTING_NOT_DONE', 'COUNTING_NOT_DONE', 'Counter not yet reached limit')
 
-fsm.render('../../docs/diagrams/timing_controller_design')
+fsm.render('../docs/diagrams/timing_controller_design')
 fsm.view()

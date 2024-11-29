@@ -16,5 +16,5 @@ fsm.edge('PHASE_2', 'PRIORITY_WEST', 'Light state is phase 2 yellow with western
 fsm.edge('PRIORITY_EAST', 'PHASE_1', 'Light state is eastbound yellow')
 fsm.edge('PRIORITY_WEST', 'PHASE_1', 'Light state is westbound yellow')
 
-fsm.render('../../docs/diagrams/phase_controller_design')
+fsm.render('../docs/diagrams/phase_controller_design')
 fsm.view()
