@@ -44,6 +44,7 @@ module light_controller (
 			`WESTBOUND_GREEN: 	next_state = `WESTBOUND_YELLOW;
 			`WESTBOUND_YELLOW: 	next_state = `ALL_RED;
 			`MAINTENANCE: 		next_state = ((maintenance) ? `MAINTENANCE	: `ALL_RED);
+			default: next_state = `MAINTENANCE;
 		endcase
 	end
 endmodule
