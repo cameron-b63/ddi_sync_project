@@ -11,5 +11,5 @@ fsm.edge('COUNTING_NOT_DONE', 'COUNTING_DONE', '!(counter < threshold)')
 fsm.edge('COUNTING_DONE', 'COUNTING_NOT_DONE', 'counter < threshold')
 fsm.edge('COUNTING_NOT_DONE', 'COUNTING_NOT_DONE', 'counter < threshold')
 
-fsm.render('../docs/diagrams/timing_controller_design')
+fsm.render('../docs/diagrams/timing_controller_implementation')
 fsm.view()

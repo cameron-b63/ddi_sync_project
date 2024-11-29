@@ -1,7 +1,7 @@
 digraph {
-	COUNTING_NOT_DONE [label="timing_done = 0"]
-	COUNTING_DONE [label="timing_done = 1"]
-	COUNTING_NOT_DONE -> COUNTING_DONE [label="!(counter < threshold)"]
-	COUNTING_DONE -> COUNTING_NOT_DONE [label="counter < threshold"]
-	COUNTING_NOT_DONE -> COUNTING_NOT_DONE [label="counter < threshold"]
+	COUNTING_NOT_DONE [label=Waiting]
+	COUNTING_DONE [label="Cycle Complete"]
+	COUNTING_NOT_DONE -> COUNTING_DONE [label="Counter reached appropriate limit"]
+	COUNTING_DONE -> COUNTING_NOT_DONE [label="Counter not yet reached limit"]
+	COUNTING_NOT_DONE -> COUNTING_NOT_DONE [label="Counter not yet reached limit"]
 }
