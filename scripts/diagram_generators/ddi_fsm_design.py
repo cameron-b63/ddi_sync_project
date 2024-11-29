@@ -41,5 +41,5 @@ fsm.edge('WESTBOUND_GREEN', 'WESTBOUND_YELLOW', 'Timing controller requires tran
 fsm.edge('WESTBOUND_YELLOW', 'ALL_RED', 'Yellow timing satisfied')
 
 # Render and display the FSM diagram
-fsm.render('../../docs/diagrams/ddi_fsm')
+fsm.render('../../docs/diagrams/ddi_fsm_design')
 fsm.view()

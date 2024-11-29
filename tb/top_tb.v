@@ -62,6 +62,8 @@ module top_tb;
     	// Monitor outputs because that's what the feature is for (!)
     	initial begin
         	$monitor("Time: %t, priority: %b, light_state: %b, timing_done: %b", $time, priority, light_state, uut.u_timing_controller.timing_done);
+		$dumpfile("sim/waveform.vcd");
+		$dumpvars(0, top_tb);
     	end
 
 endmodule
