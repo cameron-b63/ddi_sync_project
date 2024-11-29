@@ -1,0 +1,12 @@
+digraph {
+	PHASE_1 [label=00]
+	PHASE_2 [label=01]
+	PRIORITY_EAST [label=10]
+	PRIORITY_WEST [label=11]
+	PHASE_1 -> PHASE_2 [label="light_state == 0010"]
+	PHASE_2 -> PHASE_1 [label="light_state == 0100 && priority == 00"]
+	PHASE_2 -> PRIORITY_EAST [label="light_state == 0100 && priority == 01"]
+	PHASE_2 -> PRIORITY_WEST [label="light_state == 0100 && priority == 10"]
+	PRIORITY_EAST -> PHASE_1 [label="light_state == 0110"]
+	PRIORITY_WEST -> PHASE_1 [label="light_state == 1000"]
+}
