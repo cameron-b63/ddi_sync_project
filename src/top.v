@@ -3,6 +3,7 @@
 module top(
 	input wire clk,
 	input wire rst,
+	input wire maintenance,
 	input wire [1:0] priority,
 	output wire [3:0] light_state
 );

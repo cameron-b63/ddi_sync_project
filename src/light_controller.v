@@ -14,13 +14,14 @@ module light_controller (
 	reg [3:0] next_state;
 
 	// Panic: for uncontrolled transitions to maintenance. Requires a RST to escape the maintenance loop.
-	reg panic;
+	reg panic = 0;
 
 	// Clock/reset signal logic
 	always @(posedge clk or posedge rst or posedge maintenance) begin
-		if (rst)
+		if (rst) begin
 			current_state <= `ALL_RED; // Reset to full stop
-		else if (maintenance)
+			panic <= 1;
+		end else if (maintenance)
 			current_state <= `MAINTENANCE; // Go to flashing reds
 		else
 			current_state <= (timing_done) ? next_state : current_state; // Use next state calculed value
@@ -47,7 +48,10 @@ module light_controller (
 			`WESTBOUND_GREEN: 	next_state = `WESTBOUND_YELLOW;
 			`WESTBOUND_YELLOW: 	next_state = `ALL_RED;
 			`MAINTENANCE: 		next_state = ((panic || maintenance) ? `MAINTENANCE	: `ALL_RED);
-			default: next_state = `MAINTENANCE;
+			default: begin
+				next_state = `MAINTENANCE;
+				panic = 1;
+			end
 		endcase
 	end
 endmodule
