@@ -1,0 +1,6 @@
+read_verilog src/*.v
+
+hierarchy -check -top top
+
+write_json docs/diagrams/top.json
+
